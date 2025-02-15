@@ -136,6 +136,11 @@
     <ClInclude Include="PNGImage.hpp" />
     <ClInclude Include="stb_image.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Media Include="Note_block_guitar.ogg.wav" />
+    <Media Include="Note_block_iron_xylophone.ogg.wav" />
+    <Media Include="Note_block_snare.ogg.wav" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
