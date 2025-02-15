@@ -34,5 +34,11 @@
     <Image Include="..\..\..\..\..\Downloads\thrawn6.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="thomas_nguyen.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resource.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
