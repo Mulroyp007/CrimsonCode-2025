@@ -26,7 +26,6 @@
     <ClInclude Include="pixel.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\..\Downloads\thrawn6.png" />
     <Image Include="Resource.png" />
     <Image Include="thomas_nguyen.png" />
   </ItemGroup>
