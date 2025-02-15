@@ -26,6 +26,11 @@
   <ItemGroup>
     <ClInclude Include="pixel.hpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\..\Downloads\thrawn6.png" />
+    <Image Include="Resource.png" />
+    <Image Include="thomas_nguyen.png" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>

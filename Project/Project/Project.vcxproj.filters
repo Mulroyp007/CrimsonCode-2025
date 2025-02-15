@@ -21,13 +21,21 @@
     <ClCompile Include="pixel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="test.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pixel.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\..\Downloads\thrawn6.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="thomas_nguyen.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resource.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
