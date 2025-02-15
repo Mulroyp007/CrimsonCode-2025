@@ -11,7 +11,8 @@ int main(void) {
     
     //PlaySound((LPCSTR)"C:\\kenny g.WAV", NULL, SND_ASYNC);
     PlaySound(TEXT("SystemStart"), NULL, SND_ALIAS);
-    std::cout << "Breakfast time ding" << std::endl;
+    
+    
     
     
     return 0;
