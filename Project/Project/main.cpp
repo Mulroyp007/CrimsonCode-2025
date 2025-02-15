@@ -10,7 +10,8 @@ Tasks: Open an img and get pixel data
 int main(void) {
     
     //PlaySound((LPCSTR)"C:\\kenny g.WAV", NULL, SND_ASYNC);
-    PlaySound(TEXT("SystemStart"), NULL, SND_ALIAS);
+    //PlaySound(TEXT("SystemStart"), NULL, SND_ALIAS);
+    PlaySound(L"C:\\Users\parne\Downloads\Note_block_iron_xylophone.ogg.wav", NULL, SND_FILENAME);
     
 
     
