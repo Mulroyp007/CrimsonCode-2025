@@ -19,9 +19,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="pixel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PNGImage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,18 +32,5 @@
     <ClInclude Include="pixel.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="thomas_nguyen.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Resource.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-  </ItemGroup>
-  <ItemGroup>
-    <Media Include="..\..\..\..\..\Downloads\Note_block_iron_xylophone.ogg.wav">
-      <Filter>Sounds</Filter>
-    </Media>
   </ItemGroup>
 </Project>
