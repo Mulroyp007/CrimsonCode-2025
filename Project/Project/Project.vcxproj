@@ -24,13 +24,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pixel.hpp" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resource.png" />
     <Image Include="thomas_nguyen.png" />
   </ItemGroup>
   <ItemGroup>
-    <Media Include="..\..\..\..\..\Downloads\Note_block_iron_xylophone.ogg.wav" />
+    <Media Include="Note_block_guitar.ogg.wav" />
+    <Media Include="Note_block_iron_xylophone.ogg.wav" />
+    <Media Include="Note_block_snare.ogg.wav" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

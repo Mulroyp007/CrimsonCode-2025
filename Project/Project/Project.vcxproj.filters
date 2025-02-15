@@ -29,6 +29,9 @@
     <ClInclude Include="pixel.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="thomas_nguyen.png">
@@ -39,7 +42,13 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Media Include="..\..\..\..\..\Downloads\Note_block_iron_xylophone.ogg.wav">
+    <Media Include="Note_block_iron_xylophone.ogg.wav">
+      <Filter>Sounds</Filter>
+    </Media>
+    <Media Include="Note_block_guitar.ogg.wav">
+      <Filter>Sounds</Filter>
+    </Media>
+    <Media Include="Note_block_snare.ogg.wav">
       <Filter>Sounds</Filter>
     </Media>
   </ItemGroup>
