@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Sounds">
+      <UniqueIdentifier>{e224775f-22a5-45bc-9bd7-969960f205e0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -34,5 +37,10 @@
     <Image Include="Resource.png">
       <Filter>Resource Files</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="..\..\..\..\..\Downloads\Note_block_iron_xylophone.ogg.wav">
+      <Filter>Sounds</Filter>
+    </Media>
   </ItemGroup>
 </Project>
