@@ -69,7 +69,7 @@ Pixel* PNGImage::getPixelData(void)
 		pixelArray[pixelIndex].g = imageData[i + 1];
 		pixelArray[pixelIndex].b = imageData[i + 2];
 		
-		std::cout << pixelArray[pixelIndex] << std::endl;
+		//std::cout << pixelArray[pixelIndex] << std::endl;
 
 		pixelIndex++;
 	}

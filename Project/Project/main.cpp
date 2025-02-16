@@ -14,9 +14,15 @@ int main(void) {
     
     Pixel* pixelArr = NULL;
     
-    PNGImage image("thrawn6.png");
+    PNGImage image("art-artistic-background-1566909.jpg");
+
+   
 
     pixelArr = image.getPixelData();
+
+    ImageSoundData sound(pixelArr);
+
+    sound.playImageSound(pixelArr, 1000);
     
 
 

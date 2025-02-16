@@ -137,9 +137,6 @@
     <ClInclude Include="stb_image.h" />
   </ItemGroup>
   <ItemGroup>
-    <Media Include="Note_block_iron_xylophone.ogg.wav" />
-  </ItemGroup>
-  <ItemGroup>
     <Image Include="thrawn6.png" />
   </ItemGroup>
   <ItemGroup>
