@@ -17,6 +17,7 @@ PNGImage::PNGImage(const std::string& fileName, int width, int height, int chann
 	}
 	else {
 		std::cout << "Width:" << width << " " << "Height:" << height << " " << "Channels:" << channels << " " << std::endl;
+
 	}
 }
 
@@ -45,4 +46,9 @@ int PNGImage::getChannels() const
 unsigned char* PNGImage::getImageData() const
 {
 	return imageData;
+}
+
+Pixel* PNGImage::getPixelData(void)
+{
+	
 }

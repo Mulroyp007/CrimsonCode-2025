@@ -1,7 +1,10 @@
+#pragma once
+
 #include <iostream>
 #include <fstream>
 #include <stdlib.h>
 #include "stb_image.h"
+#include "pixel.hpp"
 
 
 class PNGImage {
@@ -29,6 +32,9 @@ public:
 	unsigned char* getImageData() const;
 
 #pragma endregion
+
+	//Returns null if imagedata is null
+	Pixel* getPixelData(void);
 
 };
 

@@ -16,7 +16,7 @@ int main(void) {
     
     PNGImage image("thrawn6.png");  
     
-    std::srand(std::time(0));
+    /*std::srand(std::time(0));
     int random = 0;
     random = std::rand() % 10 + 1;
     int guess = 0;
@@ -24,7 +24,7 @@ int main(void) {
     std::cout << "Guess a number 1-10: ";
     std::cin >> guess;
     if (guess == random) std::cout << "Correct Guess!!!!!" << std::endl;
-    else std::cout << "You stoopid" << std::endl;
+    else std::cout << "You stoopid" << std::endl;*/
     
     return 0;
 }
