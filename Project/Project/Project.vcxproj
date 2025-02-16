@@ -138,7 +138,6 @@
   </ItemGroup>
   <ItemGroup>
     <Media Include="Note_block_iron_xylophone.ogg.wav" />
-    <Media Include="Note_block_snare.ogg.wav" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="thrawn6.png" />
