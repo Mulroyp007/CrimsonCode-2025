@@ -86,7 +86,7 @@ double ImageSoundData::getBlueScatter(void)
 	return 0.0;
 }
 
-void ImageSoundData::playImageSound(Pixel img[], int length)
+void ImageSoundData::playImageSound(Pixel img[], int width)
 {
 	//convert from r,g,b to 1,2,3,4,5,6,7,or 8
 	std::srand(std::time(0));
