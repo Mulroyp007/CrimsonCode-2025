@@ -11,10 +11,6 @@ Tasks: Open an img and get pixel data
 #include <iostream>
 #include <fstream>
 
-#define CUTE_SOUND_IMPLEMENTATION
-//#include "cute_headers-master\cute_sound.h"
-
-
 
 
 
@@ -44,6 +40,11 @@ int main(void) {
 
 
     free(pixelArr);
+
+    //cs_init(NULL, 44100, 1024, NULL);
+    // cs_audio_source_t* = cs_load_wav("Flight_Hymn_by_Ross_Bugden.wav", NULL);
+    // cs_music_play(cs_audio_source_t, 10);
+    //   
 
 
 
