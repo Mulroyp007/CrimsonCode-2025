@@ -1,7 +1,8 @@
 #include <iostream>
 #include <fstream>
-#define STB_IMAGE_IMPLEMENTATION
+#include <stdlib.h>
 #include "stb_image.h"
+
 
 class PNGImage {
 
@@ -15,8 +16,6 @@ public:
 #pragma region Constructors
 
 	PNGImage(const std::string& fileName, int width = 0, int height = 0, int channels = 0);
-
-
 
 #pragma endregion 
 	

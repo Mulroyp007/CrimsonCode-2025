@@ -1,3 +1,4 @@
+#define STB_IMAGE_IMPLEMENTATION
 #include "PNGImage.hpp"
 
 PNGImage::PNGImage(const std::string& fileName, int width, int height, int channels) {
@@ -5,6 +6,7 @@ PNGImage::PNGImage(const std::string& fileName, int width, int height, int chann
 	this->width = width;
 	this->height = height;
 	this->channels = channels;
+
 
 	// image read
 	imageData = stbi_load(fileName.c_str(), &width, &height, &channels, 3);
@@ -14,7 +16,7 @@ PNGImage::PNGImage(const std::string& fileName, int width, int height, int chann
 		std::cout << "Failed To Read Image" << std::endl;
 	}
 	else {
-		std::cout << "Width:" << width << "Height:" << height << "Channels:" << channels << std::endl;
+		std::cout << "Width:" << width << " " << "Height:" << height << " " << "Channels:" << channels << " " << std::endl;
 	}
 }
 
