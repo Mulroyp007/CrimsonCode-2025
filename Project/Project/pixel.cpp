@@ -1,24 +1,43 @@
 #include "pixel.hpp"
 
-ImageSoundData::ImageSoundData(Pixel img[])
+ImageSoundData::ImageSoundData(Pixel img[], int width = 0, int height = 0)
 {
+	this->redPixels = 0;
+	this->greenPixels = 0;
+	this->bluePixels = 0;
+	this->redScatter = 0.0;
+	this->greenScatter = 0.0;
+	this->blueScatter = 0.0;
 
 }
 
-int ImageSoundData::setRedPixels(Pixel img[])
+void ImageSoundData::setRedPixels(Pixel img[], int width, int height)
 {
 
-	return 0;
+	for (int i = 0; i < width * height; i++) {
+		if (img[i].r > img[i].b && img[i].r > img[i].g) {
+			redPixels++;
+		}
+	}
 }
 
-int ImageSoundData::setGreenPixels(Pixel img[])
+void ImageSoundData::setGreenPixels(Pixel img[], int width, int height)
 {
-	return 0;
+
+	for (int i = 0; i < width * height; i++) {
+		if (img[i].g > img[i].r && img[i].g > img[i].b) {
+			greenPixels++;
+		}
+	}
 }
 
-int ImageSoundData::setBluePixels(Pixel img[])
+void ImageSoundData::setBluePixels(Pixel img[], int width, int height)
 {
-	return 0;
+	for (int i = 0; i < width * height; i++) {
+		if (img[i].b > img[i].r && img[i].b > img[i].g) {
+			bluePixels++;
+		}
+	}
 }
 
 int ImageSoundData::setRedScatter(Pixel img[])
@@ -36,20 +55,19 @@ int ImageSoundData::setBlueScatter(Pixel img[])
 	return 0;
 }
 
-int ImageSoundData::getRedPixels(void)
+int ImageSoundData::getRedPixels(void) const
 {
-	
-	return this->redPixels;
+	return redPixels;
 }
 
-int ImageSoundData::getGreenPixels(void)
+int ImageSoundData::getGreenPixels(void) const
 {
-	return this->greenPixels;
+	return greenPixels;
 }
 
-int ImageSoundData::getbluePixles(void)
+int ImageSoundData::getBluePixels(void) const
 {
-	return this->bluePixels;
+	return bluePixels;
 }
 
 double ImageSoundData::getRedScatter(void)

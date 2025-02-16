@@ -13,7 +13,7 @@ int main(void) {
     
     
     Pixel* pixelArr = NULL;
-    
+ 
     PNGImage image("thrawn6.png");
 
     pixelArr = image.getPixelData();
