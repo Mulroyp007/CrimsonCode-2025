@@ -12,6 +12,10 @@ PNGImage::PNGImage(const std::string& fileName, int width, int height, int chann
 	// image read
 	imageData = stbi_load(fileName.c_str(), &width, &height, &channels, 3);
 
+	this->width = width;
+	this->height = height;
+	this->channels = channels;
+
 	// check if image read
 	if (!imageData) {
 		std::cout << "Failed To Read Image" << std::endl;
@@ -54,18 +58,19 @@ Pixel* PNGImage::getPixelData(void)
 	if (imageData == NULL) return NULL;
 
 
-	Pixel* pixelArray = (Pixel*)malloc(sizeof(Pixel) * width * height);
+	Pixel* pixelArray = new Pixel[this->width * height];
 	if (pixelArray == NULL) return NULL;
 
-
+	int pixelIndex = 0;
 	//Assumes 3 channel imageData
 	for (int i = 0; i < height * width * 3; i+=3)
 	{
-		pixelArray[i].r = imageData[i];
-		pixelArray[i].g = imageData[i + 1];
-		pixelArray[i].b = imageData[i + 2];
+		pixelArray[pixelIndex].r = imageData[i];
+		pixelArray[pixelIndex].g = imageData[i + 1];
+		pixelArray[pixelIndex].b = imageData[i + 2];
 
-		std::cout << pixelArray[i] << std::endl;
+		std::cout << pixelArray[pixelIndex] << std::endl;
+
+		pixelIndex++;
 	}
-
 }

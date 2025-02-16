@@ -33,8 +33,8 @@ public:
 
 #pragma endregion
 
-	//Returns null if imagedata is null
 	Pixel* getPixelData(void);
 
 };
+
 

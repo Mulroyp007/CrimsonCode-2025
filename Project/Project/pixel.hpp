@@ -50,4 +50,4 @@ private:
 
 void playSound(int pixelCode);
 
-std::ostream& operator<<(std::ostream& lhs, Pixel& rhs);
+std::ostream& operator<<(std::ostream& lhs, const Pixel& rhs);
