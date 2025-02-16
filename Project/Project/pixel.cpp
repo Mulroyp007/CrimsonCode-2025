@@ -2,10 +2,12 @@
 
 ImageSoundData::ImageSoundData(Pixel img[])
 {
+
 }
 
 int ImageSoundData::setRedPixels(Pixel img[])
 {
+
 	return 0;
 }
 
@@ -36,17 +38,18 @@ int ImageSoundData::setBlueScatter(Pixel img[])
 
 int ImageSoundData::getRedPixels(void)
 {
-	return 0;
+	
+	return this->redPixels;
 }
 
 int ImageSoundData::getGreenPixels(void)
 {
-	return 0;
+	return this->greenPixels;
 }
 
 int ImageSoundData::getbluePixles(void)
 {
-	return 0;
+	return this->bluePixels;
 }
 
 double ImageSoundData::getRedScatter(void)
@@ -69,6 +72,16 @@ void ImageSoundData::playImageSound(void)
 
 }
 
+/****************************************************************************
+* Function: playSound()
+* Date Created: 2/15/25
+* Date Last Modified: 2/15/25
+* Description: Based on code passed in, plays one of the included sounds
+* Input parameters: int pixelCode
+* Returns: none
+* Preconditions: start of program
+* Postconditions: sound is played
+*/
 void playSound(int pixelCode)
 {
 	switch (pixelCode) {
