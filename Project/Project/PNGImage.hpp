@@ -6,6 +6,7 @@
 #include "stb_image.h"
 #include "pixel.hpp"
 
+
 //typedef struct pixel {
 //	int r, g, b;
 //}Pixel;

@@ -5,12 +5,21 @@ Tasks: Open an img and get pixel data
 */
 
 #include "PNGImage.hpp"
+#include <xaudio2.h>
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <stdexcept>
+
+#pragma comment(lib, "xaudio2.lib")
 
 #pragma comment(lib,"winmm.lib")
 
 
+
 int main(void) {
     
+  
     
     Pixel* pixelArr = NULL;
     
@@ -22,7 +31,7 @@ int main(void) {
 
     ImageSoundData sound(pixelArr,64,64);
 
-    sound.playImageSound(pixelArr, 1000);
+    sound.playImageSound(pixelArr, image.getWidth());
     
 
 

@@ -43,7 +43,7 @@ public:
 	double getAvgBrightness(void);
 #pragma endregion
 
-	void playImageSound(Pixel img[], int length);
+	void playImageSound(Pixel img[], int width);
 
 
 private:
@@ -54,5 +54,9 @@ private:
 };
 
 void playSound(int pixelCode);
+
+uint32_t ReadUInt32(std::ifstream& file);
+
+uint16_t ReadUInt16(std::ifstream& file);
 
 std::ostream& operator<<(std::ostream& lhs, const Pixel& rhs);
