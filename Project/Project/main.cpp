@@ -4,14 +4,23 @@ Tasks: Open an img and get pixel data
        Find an algorithm to convert pixels to sound
 */
 
+
+#define _CRT_SECURE_NO_WARNINGS
+
 #include "PNGImage.hpp"
-#include <xaudio2.h>
 #include <iostream>
 #include <fstream>
 #include <vector>
 #include <stdexcept>
 
-#pragma comment(lib, "xaudio2.lib")
+#define CUTE_SOUND_IMPLEMENTATION
+//#include "cute_headers-master\cute_sound.h"
+
+
+
+
+
+
 
 #pragma comment(lib,"winmm.lib")
 
@@ -32,7 +41,15 @@ int main(void) {
     ImageSoundData sound(pixelArr,64,64);
 
     sound.playImageSound(pixelArr, image.getWidth());
-    
+
+  
+    //cs_init(NULL, 44100, 1024, NULL);
+    //
+    //
+    //cs_audio_source_t* song = cs_load_wav("Flight_Hymn_by_Ross_Bugden.wav", NULL);
+    //cs_sound_params_t params = cs_sound_params_default();
+    //
+    //cs_play_sound(song, params);
 
   
     

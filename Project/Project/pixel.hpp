@@ -6,6 +6,8 @@
 #include <ctime>
 #include <cstdlib>
 #include <fstream>
+//#include <stdio.h>
+
 
 typedef struct pixel {
 	int r, g, b;
@@ -50,9 +52,5 @@ private:
 };
 
 void playSound(int pixelCode);
-
-uint32_t ReadUInt32(std::ifstream& file);
-
-uint16_t ReadUInt16(std::ifstream& file);
 
 std::ostream& operator<<(std::ostream& lhs, const Pixel& rhs);
