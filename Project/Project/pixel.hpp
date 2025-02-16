@@ -1,6 +1,8 @@
 #include <iostream>
 #include <Windows.h>
 #include <mmsystem.h>
+#include <ctime>
+#include <cstdlib>
 
 typedef struct pixel
 {
@@ -37,7 +39,8 @@ public:
 
 	void playImageSound(void);
 
+
 private:
-	int redPixels, greenPixels, bluePixels;
-	double redScatter, greenScatter, blueScatter;
+	int redPixels = 0, greenPixels = 0, bluePixels = 0;
+	double redScatter = 0.0, greenScatter = 0.0, blueScatter = 0.0;
 };
