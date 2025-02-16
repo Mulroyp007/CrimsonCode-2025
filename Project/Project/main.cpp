@@ -10,8 +10,6 @@ Tasks: Open an img and get pixel data
 #include "PNGImage.hpp"
 #include <iostream>
 #include <fstream>
-#include <vector>
-#include <stdexcept>
 
 #define CUTE_SOUND_IMPLEMENTATION
 //#include "cute_headers-master\cute_sound.h"
@@ -40,18 +38,30 @@ int main(void) {
 
     ImageSoundData sound(pixelArr,64,64);
 
-    sound.playImageSound(pixelArr, image.getWidth());
+    sound.playImageSound(pixelArr, image.getWidth() * image.getHeight());
+    
 
-  
-    //cs_init(NULL, 44100, 1024, NULL);
-    //
-    //
-    //cs_audio_source_t* song = cs_load_wav("Flight_Hymn_by_Ross_Bugden.wav", NULL);
-    //cs_sound_params_t params = cs_sound_params_default();
-    //
-    //cs_play_sound(song, params);
 
-  
+
+    free(pixelArr);
+
+
+
+
+
+
+
+   /* PlaySound(TEXT("Note_block_banjo.wav"), NULL, SND_FILENAME );
+
+    PlaySound(TEXT("Note_block_guitar.wav"), NULL, SND_FILENAME);
+
+    PlaySound(TEXT("Note_block_flute.wav"), NULL, SND_FILENAME);
+
+    PlaySound(TEXT("Note_block_cow_bell.wav"), NULL, SND_FILENAME);
+
+    PlaySound(TEXT("Note_block_didgeridoo.wav"), NULL, SND_FILENAME);
+
+    PlaySound(TEXT("Note_block_snare.wav"), NULL, SND_FILENAME);*/
     
     return 0;
 }
