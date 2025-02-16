@@ -4,17 +4,10 @@
 We will store pixels in a 2d array of structs that is dynamically allocated.
 
 
+Uninplemented plans: Read in each pixel and play a sound depending on the data. 
+Modify the sound based on environmental factors.
+
+-analyze brightness and most common color for and have those equate to certain sounds, play with a predefined rhythm
 
 
-Unrelated Code:
-(may or not run a game)
-std::srand(std::time(0));
-    int random = 0;
-    random = std::rand() % 10 + 1;
-    int guess = 0;
 
-    std::cout << "Guess a number 1-10: ";
-    std::cin >> guess;
-    if (guess == random) std::cout << "Correct Guess!!!!!" << std::endl;
-    else std::cout << "You stoopid" << std::endl;
-    

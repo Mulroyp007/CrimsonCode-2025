@@ -2,13 +2,12 @@
 
 ImageSoundData::ImageSoundData(Pixel img[], int width = 0, int height = 0)
 {
+	this->bluePixels = 0;
 	this->redPixels = 0;
 	this->greenPixels = 0;
-	this->bluePixels = 0;
-	this->redScatter = 0.0;
 	this->greenScatter = 0.0;
+	this->redScatter = 0.0;
 	this->blueScatter = 0.0;
-
 }
 
 void ImageSoundData::setRedPixels(Pixel img[], int width, int height)
@@ -85,9 +84,39 @@ double ImageSoundData::getBlueScatter(void)
 	return 0.0;
 }
 
-void ImageSoundData::playImageSound(void)
+void ImageSoundData::playImageSound(Pixel img[], int length)
 {
+	//convert from r,g,b to 1,2,3,4,5,6,7,or 8
 
+	for (int i = 0; i < length; i++) {
+		int sum = 0;
+		sum = img[i].r + img[i].g + img[i].b;
+		//0-765
+		if (sum > 670) {
+			playSound(1);
+		}
+		else if (sum > 575) {
+			playSound(2);
+		}
+		else if (sum > 480) {
+			playSound(3);
+		}
+		else if (sum > 385) {
+			playSound(4);
+		}
+		else if (sum > 290) {
+			playSound(5);
+		}
+		else if (sum > 195) {
+			playSound(6);
+		}
+		else if (sum > 100) {
+			playSound(7);
+		}
+		else {
+			playSound(8);
+		}
+	}
 }
 
 /****************************************************************************
@@ -106,19 +135,19 @@ void playSound(int pixelCode)
 	case 1:
 		PlaySound(TEXT("Note_block_guitar.wav"), NULL, SND_FILENAME);
 	case 2:
-		PlaySound(TEXT("Note_block_iron_xylophone.ogg.wav"), NULL, SND_FILENAME);
+		PlaySound(TEXT("Note_block_iron_xylophone.wav"), NULL, SND_FILENAME);
 	case 3:
 		PlaySound(TEXT("Note_block_banjo.wav"), NULL, SND_FILENAME);
 	case 4:
-		PlaySound(TEXT("Note_block_bassattack.ogg.wav"), NULL, SND_FILENAME);
+		PlaySound(TEXT("Note_block_bassattack.wav"), NULL, SND_FILENAME);
 	case 5:
-		PlaySound(TEXT("Note_block_cow_bell.ogg.wav"), NULL, SND_FILENAME);
+		PlaySound(TEXT("Note_block_cow_bell.wav"), NULL, SND_FILENAME);
 	case 6:
-		PlaySound(TEXT("Note_block_didgeridoo.ogg.wav"), NULL, SND_FILENAME);
+		PlaySound(TEXT("Note_block_didgeridoo.wav"), NULL, SND_FILENAME);
 	case 7:
-		PlaySound(TEXT("Note_block_flute.ogg.wav"), NULL, SND_FILENAME);
+		PlaySound(TEXT("Note_block_flute.wav"), NULL, SND_FILENAME);
 	case 8:
-		PlaySound(TEXT("Note_block_snare.ogg.wav"), NULL, SND_FILENAME);
+		PlaySound(TEXT("Note_block_snare.wav"), NULL, SND_FILENAME);
 	}
 }
 
