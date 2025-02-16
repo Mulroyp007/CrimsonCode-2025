@@ -146,25 +146,24 @@ void playSound(int pixelCode)
 {
 	switch (pixelCode) {
 	case 1:
-		PlaySound(TEXT("Note_block_guitar.wav"), NULL, SND_FILENAME);
+		sndPlaySound(TEXT("Note_block_guitar.wav"), NULL);
 		break;
 	case 2:
-		PlaySound(TEXT("Note_block_iron_xylophone.wav"), NULL, SND_FILENAME);
+		sndPlaySound(TEXT("Note_block_iron_xylophone.wav"), NULL);
 		break;
 	case 3:
-		PlaySound(TEXT("Note_block_banjo.wav"), NULL, SND_FILENAME);
-		break;
+		sndPlaySound(TEXT("Note_block_banjo.wav"), NULL);
 	case 4:
-		PlaySound(TEXT("Note_block_bassattack.wav"), NULL, SND_FILENAME);
+		sndPlaySound(TEXT("Note_block_bassattack.wav"), NULL);
 		break;
 	case 5:
-		PlaySound(TEXT("Note_block_cow_bell.wav"), NULL, SND_FILENAME);
+		sndPlaySound(TEXT("Note_block_cow_bell.wav"), NULL);
 		break;
 	case 6:
-		PlaySound(TEXT("Note_block_didgeridoo.wav"), NULL, SND_FILENAME);
+		sndPlaySound(TEXT("Note_block_didgeridoo.wav"), NULL);
 		break;
 	case 7:
-		PlaySound(TEXT("Note_block_flute.wav"), NULL, SND_FILENAME);
+		sndPlaySound(TEXT("Note_block_flute.wav"), NULL);
 		break;
 	case 8:
 		PlaySound(TEXT("Note_block_snare.wav"), NULL, SND_FILENAME);
