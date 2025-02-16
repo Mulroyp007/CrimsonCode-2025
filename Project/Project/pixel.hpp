@@ -24,9 +24,9 @@ public:
 	void setGreenPixels(Pixel img[], int width, int height);
 	void setBluePixels(Pixel img[], int width, int height);
 
-	int setRedScatter(Pixel img[]);
-	int setGreenScatter(Pixel img[]);
-	int setBlueScatter(Pixel img[]);
+	int setRedScatter(Pixel img[], int size);
+	int setGreenScatter(Pixel img[], int size);
+	int setBlueScatter(Pixel img[], int size);
 
 #pragma endregion
 
@@ -45,7 +45,7 @@ public:
 
 private:
 	int redPixels, bluePixels, greenPixels, width, height;
-	double redScatter, blueScatter, greenScatter;
+	double redScatter, blueScatter, greenScatter; //avg distance between each pixel of the color
 
 };
 

@@ -41,19 +41,80 @@ void ImageSoundData::setBluePixels(Pixel img[], int width, int height)
 	}
 }
 
-int ImageSoundData::setRedScatter(Pixel img[])
+int ImageSoundData::setRedScatter(Pixel img[], int size)
 {
-	return 0;
+
+	if (redPixels == 0) return 0;
+
+	int distanceSum = 0;
+	int distance = 0;
+	int first = 1;
+
+	for (int i = 0; i < size; i++)
+	{
+		if (img[i].r > img[i].b && img[i].r > img[i].g) {
+			if(first) first = 0;
+			distanceSum += distance;
+		}
+		else if (!first)
+		{
+			distance++;
+		}
+	}
+
+	redScatter = distanceSum / redPixels;
+
+	return 1;
 }
 
-int ImageSoundData::setGreenScatter(Pixel img[])
+int ImageSoundData::setGreenScatter(Pixel img[], int size)
 {
-	return 0;
+	if (greenPixels == 0) return 0;
+
+	int distanceSum = 0;
+	int distance = 0;
+	int first = 1;
+
+	for (int i = 0; i < size; i++)
+	{
+		if (img[i].g > img[i].r && img[i].g > img[i].b) {
+			if (first) first = 0;
+			distanceSum += distance;
+		}
+		else if (!first)
+		{
+			distance++;
+		}
+	}
+
+	greenScatter = distanceSum / greenPixels;
+
+	return 1;
 }
 
-int ImageSoundData::setBlueScatter(Pixel img[])
+int ImageSoundData::setBlueScatter(Pixel img[], int size)
 {
-	return 0;
+	if (bluePixels == 0) return 0;
+
+	int distanceSum = 0;
+	int distance = 0;
+	int first = 1;
+
+	for (int i = 0; i < size; i++)
+	{
+		if (img[i].b > img[i].g && img[i].b > img[i].r) {
+			if (first) first = 0;
+			distanceSum += distance;
+		}
+		else if (!first)
+		{
+			distance++;
+		}
+	}
+
+	blueScatter = distanceSum / bluePixels;
+
+	return 1;
 }
 
 int ImageSoundData::getRedPixels(void) const
@@ -73,17 +134,17 @@ int ImageSoundData::getBluePixels(void) const
 
 double ImageSoundData::getRedScatter(void)
 {
-	return 0.0;
+	return redScatter;
 }
 
 double ImageSoundData::getGreenScatter(void)
 {
-	return 0.0;
+	return greenScatter;
 }
 
 double ImageSoundData::getBlueScatter(void)
 {
-	return 0.0;
+	return blueScatter;
 }
 
 void ImageSoundData::playImageSound(Pixel img[], int length)
