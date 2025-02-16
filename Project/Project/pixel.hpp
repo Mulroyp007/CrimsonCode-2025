@@ -40,7 +40,7 @@ public:
 	double getBlueScatter(void);
 #pragma endregion
 
-	void playImageSound(void);
+	void playImageSound(Pixel img[], int index);
 
 
 private:

@@ -67,11 +67,13 @@ double ImageSoundData::getBlueScatter(void)
 	return 0.0;
 }
 
-void ImageSoundData::playImageSound(void)
+void ImageSoundData::playImageSound(Pixel img[], int index)
 {
 	//convert from r,g,b to 1,2,3,4,5,6,7,or 8
+
+
 	int sum = 0;
-	sum = this->redPixels + this->greenPixels + this->bluePixels;
+	sum = img[index].r + img[index].g + img[index].b;
 	//0-765
 	if (sum > 670) {
 		playSound(1);
