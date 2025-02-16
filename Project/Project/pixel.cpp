@@ -103,3 +103,10 @@ void playSound(int pixelCode)
 		PlaySound(TEXT("Note_block_snare.ogg.wav"), NULL, SND_FILENAME);
 	}
 }
+
+std::ostream& operator<<(std::ostream& lhs, Pixel rhs)
+{
+	lhs << "R: " << rhs.r << ", G: " << rhs.g << ", B: " << rhs.b;
+
+	return lhs;
+}

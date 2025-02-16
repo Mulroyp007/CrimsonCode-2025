@@ -1,15 +1,11 @@
+#pragma once
+
 #include <iostream>
 #include <Windows.h>
 #include <mmsystem.h>
 #include <ctime>
 #include <cstdlib>
-#include <stdio.h>
-#include <stdlib.h>
-//#include <irrKlang.h>
-//using namespace irrklang;
-
-//#pragma comment(lib, "irrKlang.lib")
-
+#include <fstream>
 
 typedef struct pixel
 {
@@ -53,3 +49,5 @@ private:
 };
 
 void playSound(int pixelCode);
+
+std::ostream& operator<<(std::ostream& lhs, Pixel& rhs);
