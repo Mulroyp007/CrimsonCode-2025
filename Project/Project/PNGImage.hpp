@@ -6,6 +6,10 @@
 #include "stb_image.h"
 #include "pixel.hpp"
 
+//typedef struct pixel {
+//	int r, g, b;
+//}Pixel;
+
 
 class PNGImage {
 
@@ -14,6 +18,7 @@ private:
 	int width;
 	int height;
 	int channels;
+
 public:
 
 #pragma region Constructors
@@ -21,7 +26,7 @@ public:
 	PNGImage(const std::string& fileName, int width = 0, int height = 0, int channels = 0);
 
 #pragma endregion 
-	
+
 	// deconstructor
 	~PNGImage();
 
@@ -32,9 +37,9 @@ public:
 	unsigned char* getImageData() const;
 
 #pragma endregion
-
+	
+	// test
 	Pixel* getPixelData(void);
 
 };
-
 

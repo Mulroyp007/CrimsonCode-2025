@@ -7,22 +7,22 @@
 #include <cstdlib>
 #include <fstream>
 
-typedef struct pixel
-{
+typedef struct pixel {
 	int r, g, b;
 }Pixel;
+
 
 class ImageSoundData
 {
 
 public:
 
-	ImageSoundData(Pixel img[]);
+	ImageSoundData(Pixel img[], int width, int height);
 
 #pragma region Setters
-	int setRedPixels(Pixel img[]);
-	int setGreenPixels(Pixel img[]);
-	int setBluePixels(Pixel img[]);
+	void setRedPixels(Pixel img[], int width, int height);
+	void setGreenPixels(Pixel img[], int width, int height);
+	void setBluePixels(Pixel img[], int width, int height);
 
 	int setRedScatter(Pixel img[]);
 	int setGreenScatter(Pixel img[]);
@@ -31,9 +31,9 @@ public:
 #pragma endregion
 
 #pragma region Getters
-	int getRedPixels(void);
-	int getGreenPixels(void);
-	int getbluePixles(void);
+	int getRedPixels(void) const;
+	int getGreenPixels(void) const;
+	int getBluePixels(void) const;
 
 	double getRedScatter(void);
 	double getGreenScatter(void);
@@ -44,8 +44,8 @@ public:
 
 
 private:
-	int redPixels = 0, greenPixels = 0, bluePixels = 0;
-	double redScatter = 0.0, greenScatter = 0.0, blueScatter = 0.0;
+	int redPixels, bluePixels, greenPixels;
+	double redScatter, blueScatter, greenScatter;
 };
 
 void playSound(int pixelCode);

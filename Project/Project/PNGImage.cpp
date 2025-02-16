@@ -2,6 +2,8 @@
 #include "PNGImage.hpp"
 
 
+
+
 PNGImage::PNGImage(const std::string& fileName, int width, int height, int channels) {
 	imageData = nullptr;
 	this->width = width;
@@ -53,7 +55,8 @@ unsigned char* PNGImage::getImageData() const
 	return imageData;
 }
 
-Pixel* PNGImage::getPixelData(void)
+
+Pixel* PNGImage::getPixelData()
 {
 	if (imageData == NULL) return NULL;
 
@@ -63,15 +66,24 @@ Pixel* PNGImage::getPixelData(void)
 
 	int pixelIndex = 0;
 	//Assumes 3 channel imageData
-	for (int i = 0; i < height * width * 3; i+=3)
+	for (int i = 0; i < height * width * 3; i += 3)
 	{
 		pixelArray[pixelIndex].r = imageData[i];
 		pixelArray[pixelIndex].g = imageData[i + 1];
 		pixelArray[pixelIndex].b = imageData[i + 2];
-		
-		//std::cout << pixelArray[pixelIndex] << std::endl;
 
+		/*std::cout << pixelArray[pixelIndex] << std::endl;*/
 		pixelIndex++;
 	}
+	ImageSoundData imgSoundData(pixelArray, this->width, this->height);
+	imgSoundData.setRedPixels(pixelArray, this->width, this->height);
+	imgSoundData.setGreenPixels(pixelArray, this->width, this->height);
+	imgSoundData.setBluePixels(pixelArray, this->width, this->height);
+
+	std::cout << "Red pixels: " << imgSoundData.getRedPixels() << std::endl;
+	std::cout << "Green pixels: " << imgSoundData.getGreenPixels() << std::endl;
+	std::cout << "Blue pixels: " << imgSoundData.getBluePixels() << std::endl;
+
 	return pixelArray;
 }
+
