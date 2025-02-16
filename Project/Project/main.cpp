@@ -10,7 +10,7 @@ Tasks: Open an img and get pixel data
 int main(void) {
     
     
-    PlaySound(TEXT("Note_block_guitar.ogg.wav"), NULL, SND_FILENAME);
+    
     
     
     
