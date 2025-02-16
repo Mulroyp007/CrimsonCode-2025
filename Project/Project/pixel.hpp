@@ -3,6 +3,13 @@
 #include <mmsystem.h>
 #include <ctime>
 #include <cstdlib>
+#include <stdio.h>
+#include <stdlib.h>
+//#include <irrKlang.h>
+//using namespace irrklang;
+
+//#pragma comment(lib, "irrKlang.lib")
+
 
 typedef struct pixel
 {
