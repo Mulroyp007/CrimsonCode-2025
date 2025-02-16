@@ -123,6 +123,12 @@ void ImageSoundData::playImageSound(Pixel img[], int width)
 		else {
 			playSound(8);
 		}
+			i++;
+		}
+		i = 0;
+		i += (2 * width - length);
+		length += (2 * width);
+		row++;
 	}
 }
 
