@@ -1,6 +1,8 @@
 #include <iostream>
 #include <Windows.h>
 #include <mmsystem.h>
+#include <ctime>
+#include <cstdlib>
 
 typedef struct pixel
 {
