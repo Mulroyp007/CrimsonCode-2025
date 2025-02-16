@@ -2,7 +2,7 @@
 
 ImageSoundData::ImageSoundData(Pixel img[])
 {
-
+	
 }
 
 int ImageSoundData::setRedPixels(Pixel img[])
@@ -69,7 +69,34 @@ double ImageSoundData::getBlueScatter(void)
 
 void ImageSoundData::playImageSound(void)
 {
-
+	//convert from r,g,b to 1,2,3,4,5,6,7,or 8
+	int sum = 0;
+	sum = this->redPixels + this->greenPixels + this->bluePixels;
+	//0-765
+	if (sum > 670) {
+		playSound(1);
+	}
+	else if (sum > 575) {
+		playSound(2);
+	}
+	else if (sum > 480) {
+		playSound(3);
+	}
+	else if (sum > 385) {
+		playSound(4);
+	}
+	else if (sum > 290) {
+		playSound(5);
+	}
+	else if (sum > 195) {
+		playSound(6);
+	}
+	else if (sum > 100) {
+		playSound(7);
+	}
+	else {
+		playSound(8);
+	}
 }
 
 /****************************************************************************
@@ -96,7 +123,7 @@ void playSound(int pixelCode)
 	case 5:
 		PlaySound(TEXT("Note_block_cow_bell.ogg.wav"), NULL, SND_FILENAME);
 	case 6:
-		PlaySound(TEXT("Note_block_didgeridoo.ogg.wav"), NULL, SND_FILENAME);
+		PlaySound(TEXT("Note_block_didgeridoo.wav"), NULL, SND_FILENAME);
 	case 7:
 		PlaySound(TEXT("Note_block_flute.ogg.wav"), NULL, SND_FILENAME);
 	case 8:
