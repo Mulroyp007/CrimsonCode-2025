@@ -27,7 +27,7 @@ int main(void) {
 
 
 
-
+    free(pixelArr);
 
 
 
