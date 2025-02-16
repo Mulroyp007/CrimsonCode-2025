@@ -86,11 +86,16 @@ double ImageSoundData::getBlueScatter(void)
 	return 0.0;
 }
 
-void ImageSoundData::playImageSound(Pixel img[], int length)
+void ImageSoundData::playImageSound(Pixel img[], int width)
 {
 	//convert from r,g,b to 1,2,3,4,5,6,7,or 8
-
-	for (int i = 0; i < length; i++) {
+	std::srand(std::time(0));
+	int length = 0;
+	length = std::rand() % 10 + 1;
+	int row = 0;
+	int i = 0;
+	while (row < 3) {
+		while (i < length) {
 		int sum = 0;
 		sum = img[i].r + img[i].g + img[i].b;
 		//0-765
@@ -118,6 +123,12 @@ void ImageSoundData::playImageSound(Pixel img[], int length)
 		else {
 			playSound(8);
 		}
+			i++;
+		}
+		i = 0;
+		i += (2 * width - length);
+		length += (2 * width);
+		row++;
 	}
 }
 
