@@ -104,7 +104,7 @@ void playSound(int pixelCode)
 	}
 }
 
-std::ostream& operator<<(std::ostream& lhs, Pixel rhs)
+std::ostream& operator<<(std::ostream& lhs, Pixel& rhs)
 {
 	lhs << "R: " << rhs.r << ", G: " << rhs.g << ", B: " << rhs.b;
 
