@@ -5,6 +5,7 @@
 #include <mmsystem.h>
 #include <ctime>
 #include <cstdlib>
+#include <fstream>
 
 typedef struct pixel
 {
@@ -48,3 +49,5 @@ private:
 };
 
 void playSound(int pixelCode);
+
+std::ostream& operator<<(std::ostream& lhs, Pixel& rhs);

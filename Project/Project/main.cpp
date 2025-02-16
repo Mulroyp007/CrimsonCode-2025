@@ -12,9 +12,11 @@ Tasks: Open an img and get pixel data
 int main(void) {
     
     
+    Pixel* pixelArr = NULL;
     
-    
-    PNGImage image("thrawn6.png");  
+    PNGImage image("thrawn6.png");
+
+    pixelArr = image.getPixelData();
     
     /*std::srand(std::time(0));
     int random = 0;

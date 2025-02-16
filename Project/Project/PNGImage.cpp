@@ -1,6 +1,7 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "PNGImage.hpp"
 
+
 PNGImage::PNGImage(const std::string& fileName, int width, int height, int channels) {
 	imageData = nullptr;
 	this->width = width;
@@ -50,5 +51,21 @@ unsigned char* PNGImage::getImageData() const
 
 Pixel* PNGImage::getPixelData(void)
 {
-	
+	if (imageData == NULL) return NULL;
+
+
+	Pixel* pixelArray = (Pixel*)malloc(sizeof(Pixel) * width * height);
+	if (pixelArray == NULL) return NULL;
+
+
+	//Assumes 3 channel imageData
+	for (int i = 0; i < height * width * 3; i+=3)
+	{
+		pixelArray[i].r = imageData[i];
+		pixelArray[i].g = imageData[i + 1];
+		pixelArray[i].b = imageData[i + 2];
+
+		std::cout << pixelArray[i] << std::endl;
+	}
+
 }
