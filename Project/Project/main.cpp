@@ -14,7 +14,7 @@ int main(void) {
     
     Pixel* pixelArr = NULL;
     
-    PNGImage image("art-artistic-background-1566909.jpg");
+    PNGImage image("song.jpg");
 
    
 
