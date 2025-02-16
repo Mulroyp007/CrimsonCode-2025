@@ -17,7 +17,7 @@ class ImageSoundData
 
 public:
 
-	ImageSoundData(Pixel img[], int width, int height);
+	ImageSoundData(Pixel img[], int width =0, int height = 0);
 
 #pragma region Setters
 	void setRedPixels(Pixel img[], int width, int height);
@@ -44,8 +44,9 @@ public:
 
 
 private:
-	int redPixels, bluePixels, greenPixels;
+	int redPixels, bluePixels, greenPixels, width, height;
 	double redScatter, blueScatter, greenScatter;
+
 };
 
 void playSound(int pixelCode);

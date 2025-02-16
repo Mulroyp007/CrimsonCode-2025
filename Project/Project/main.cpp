@@ -14,13 +14,13 @@ int main(void) {
     
     Pixel* pixelArr = NULL;
     
-    PNGImage image("song.jpg");
+    PNGImage image("art-artistic-background-1566909.jpg");
 
-   
+    
 
     pixelArr = image.getPixelData();
 
-    ImageSoundData sound(pixelArr);
+    ImageSoundData sound(pixelArr,64,64);
 
     sound.playImageSound(pixelArr, 1000);
     
