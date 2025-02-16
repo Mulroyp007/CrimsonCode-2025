@@ -53,7 +53,7 @@ private:
 
 };
 
-void playSound(int pixelCode);
+void playSound(int sound);
 
 uint32_t ReadUInt32(std::ifstream& file);
 

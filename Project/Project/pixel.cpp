@@ -164,49 +164,120 @@ double ImageSoundData::getAvgBrightness(void)
 	return avgBrightness;
 }
 
-void ImageSoundData::playImageSound(Pixel img[], int width)
+void ImageSoundData::playImageSound(Pixel img[], int size)
 {
-	//convert from r,g,b to 1,2,3,4,5,6,7,or 8
-	std::srand(std::time(0));
 	int length = 0;
-	length = std::rand() % 10 + 1;
-	int row = 0;
-	int i = 0;
-	while (row < 3) {
-		while (i < length) {
-		int sum = 0;
-		sum = img[i].r + img[i].g + img[i].b;
-		//0-765
-		if (sum > 670) {
-			playSound(1);
+
+	//Set the length based off image size
+
+	if (size < 32 * 32) length = 20;
+	else if (size < 64 * 64) length = 50;
+	else if (size < 128 * 128) length = 100;
+	else if (size < 512 * 512) length = 200;
+	else length = 300;
+
+	//Play a sound based off high red/green/blue scatter, high brightness, and highest individual pixel color
+	for (int i = 0; i < length; i++)
+	{
+		if (redScatter > greenScatter && redScatter > blueScatter)
+		{
+			if (avgBrightness > 0.5)
+			{
+				if (img[i * length].r > img[i * length].g && img[i * length].r > img[i * length].b)
+				{
+					playSound(3);
+				}
+				else if (img[i * length].g > img[i * length].r && img[i * length].g > img[i * length].b)
+				{
+					playSound(4);
+				}
+				else
+				{
+					playSound(5);
+				}
+			}
+			else
+			{
+				if (img[i * length].r > img[i * length].g && img[i * length].r > img[i * length].b)
+				{
+					playSound(7);
+				}
+				else if (img[i * length].g > img[i * length].r && img[i * length].g > img[i * length].b)
+				{
+					playSound(8);
+				}
+				else
+				{
+					playSound(1);
+				}
+			}
 		}
-		else if (sum > 575) {
-			playSound(2);
+		else if (greenScatter > redScatter && greenScatter > blueScatter)
+		{
+			if (avgBrightness > 0.5)
+			{
+				if (img[i * length].r > img[i * length].g && img[i * length].r > img[i * length].b)
+				{
+					playSound(2);
+				}
+				else if (img[i * length].g > img[i * length].r && img[i * length].g > img[i * length].b)
+				{
+					playSound(1);
+				}
+				else
+				{
+					playSound(5);
+				}
+			}
+			else
+			{
+				if (img[i * length].r > img[i * length].g && img[i * length].r > img[i * length].b)
+				{
+					playSound(6);
+				}
+				else if (img[i * length].g > img[i * length].r && img[i * length].g > img[i * length].b)
+				{
+					playSound(3);
+				}
+				else
+				{
+					playSound(4);
+				}
+			}
 		}
-		else if (sum > 480) {
-			playSound(3);
+		else
+		{
+			if (avgBrightness > 0.5)
+			{
+				if (img[i * length].r > img[i * length].g && img[i * length].r > img[i * length].b)
+				{
+					playSound(5);
+				}
+				else if (img[i * length].g > img[i * length].r && img[i * length].g > img[i * length].b)
+				{
+					playSound(6);
+				}
+				else
+				{
+					playSound(7);
+				}
+			}
+			else
+			{
+				if (img[i * length].r > img[i * length].g && img[i * length].r > img[i * length].b)
+				{
+					playSound(1);
+				}
+				else if (img[i * length].g > img[i * length].r && img[i * length].g > img[i * length].b)
+				{
+					playSound(4);
+				}
+				else
+				{
+					playSound(3);
+				}
+			}
 		}
-		else if (sum > 385) {
-			playSound(4);
-		}
-		else if (sum > 290) {
-			playSound(5);
-		}
-		else if (sum > 195) {
-			playSound(6);
-		}
-		else if (sum > 100) {
-			playSound(7);
-		}
-		else {
-			playSound(8);
-		}
-			i++;
-		}
-		i = 0;
-		i += (2 * width);
-		length += (2 * width);
-		row++;
 	}
 }
 
@@ -220,9 +291,9 @@ void ImageSoundData::playImageSound(Pixel img[], int width)
 * Preconditions: start of program
 * Postconditions: sound is played
 */
-void playSound(int pixelCode)
+void playSound(int sound)
 {
-	switch (pixelCode) {
+	switch (sound) {
 	case 1:
 		PlaySound(TEXT("Note_block_guitar.wav"), NULL, SND_FILENAME);
 		break;
