@@ -9,6 +9,7 @@
 
 typedef struct pixel {
 	int r, g, b;
+	double brightness;
 }Pixel;
 
 
@@ -27,6 +28,7 @@ public:
 	int setRedScatter(Pixel img[], int size);
 	int setGreenScatter(Pixel img[], int size);
 	int setBlueScatter(Pixel img[], int size);
+	void setAvgBrightness(Pixel img[], int size);
 
 #pragma endregion
 
@@ -38,6 +40,7 @@ public:
 	double getRedScatter(void);
 	double getGreenScatter(void);
 	double getBlueScatter(void);
+	double getAvgBrightness(void);
 #pragma endregion
 
 	void playImageSound(Pixel img[], int length);
@@ -46,6 +49,7 @@ public:
 private:
 	int redPixels, bluePixels, greenPixels, width, height;
 	double redScatter, blueScatter, greenScatter; //avg distance between each pixel of the color
+	double avgBrightness;
 
 };
 

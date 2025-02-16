@@ -72,6 +72,8 @@ Pixel* PNGImage::getPixelData()
 		pixelArray[pixelIndex].g = imageData[i + 1];
 		pixelArray[pixelIndex].b = imageData[i + 2];
 
+		pixelArray[pixelIndex].brightness = (pixelArray[pixelIndex].r + pixelArray[pixelIndex].g + pixelArray[pixelIndex].b) / (255 * 3);
+
 		/*std::cout << pixelArray[pixelIndex] << std::endl;*/
 		pixelIndex++;
 	}

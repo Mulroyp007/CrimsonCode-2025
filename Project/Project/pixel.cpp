@@ -117,6 +117,18 @@ int ImageSoundData::setBlueScatter(Pixel img[], int size)
 	return 1;
 }
 
+void ImageSoundData::setAvgBrightness(Pixel img[], int size)
+{
+	double sum = 0.0;
+
+	for (int i = 0; i < size; i++)
+	{
+		sum += img[i].brightness;
+	}
+
+	avgBrightness = sum / size;
+}
+
 int ImageSoundData::getRedPixels(void) const
 {
 	return redPixels;
@@ -145,6 +157,11 @@ double ImageSoundData::getGreenScatter(void)
 double ImageSoundData::getBlueScatter(void)
 {
 	return blueScatter;
+}
+
+double ImageSoundData::getAvgBrightness(void)
+{
+	return avgBrightness;
 }
 
 void ImageSoundData::playImageSound(Pixel img[], int length)
