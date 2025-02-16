@@ -23,7 +23,7 @@ int main(void) {
 
     ImageSoundData sound(pixelArr,64,64);
 
-    sound.playImageSound(pixelArr, 1000);
+    sound.playImageSound(pixelArr, image.getWidth());
     
 
   
